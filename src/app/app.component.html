@@ -1,0 +1,85 @@
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #f5f7fa;">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <h1>Food Order Report</h1>
+
+                <div *ngIf="employee">
+                    <div class="container profile-page">
+                        <div class="row">
+                            <div>
+                                <div class="card profile-header">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="profile-image">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-12">
+                                                <h4 class="m-t-0 m-b-0"><strong>{{ employee.f_name }}</strong></h4>
+                                                <span class="job_post">Employee ID: {{ employee.emp_id }}</span>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-12">
+                                                <span class="job_post">Email ID: {{ employee.email }}</span>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-12">
+                                                <span class="job_post">Phone No: {{ employee.phone }}</span>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-12">
+                                                <span class="job_post">Total Fine: {{ totalFine }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <h3>Food Order Report for the Month</h3>
+
+                <div class="">
+                    <div class="card-body">
+                        <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px;">
+                            <table class="table table-striped mb-0">
+                                <thead class="table-dark" style="background-color: #002d72;">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Breakfast</th>
+                                        <th>Lunch</th>
+                                        <th>Dinner</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let report of paginatedReports">
+                                        <td>{{ report.date }}</td>
+                                        <td>
+                                            <span class="status-dot" [ngClass]="getStatusClass(report.opt_ins?.breakfast)"></span>
+                                            {{ report.opt_ins?.breakfast || 'N/A' }}
+                                        </td>
+                                        <td>
+                                            <span class="status-dot" [ngClass]="getStatusClass(report.opt_ins?.lunch)"></span>
+                                            {{ report.opt_ins?.lunch || 'N/A' }}
+                                        </td>
+                                        <td>
+                                            <span class="status-dot" [ngClass]="getStatusClass(report.opt_ins?.dinner)"></span>
+                                            {{ report.opt_ins?.dinner || 'N/A' }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination">
+                                <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+                                <span>Page {{ currentPage }} of {{ totalPages }}</span>
+                                <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

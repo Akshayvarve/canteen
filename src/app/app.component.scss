@@ -1,0 +1,245 @@
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+h1, h2 {
+    text-align: center;
+}
+
+
+.employee-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08);
+    padding: 14px;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.card h2, .card p {
+    text-align: center;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+}
+
+
+.status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.delivered {
+    background-color: green; 
+    animation: blink-green 1s infinite; 
+}
+
+.pending {
+    background-color: yellow; 
+    animation: blink-yellow 1s infinite; 
+}
+
+.cancelled {
+    background-color: red; 
+    animation: blink-red 1s infinite;
+}
+
+
+@keyframes blink-green {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes blink-yellow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes blink-red {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+
+@media(max-width: 990px) {
+    .container {
+        width: 95%; 
+        padding: 10px; 
+    }
+
+    .employee-card, .card {
+        margin: 10px 0; 
+    }
+
+    h1, h2 {
+        font-size: 1.5em; 
+    }
+
+    table {
+        font-size: 14px; 
+    }
+}
+
+
+body {
+    margin-top: 20px;
+    background: #eee;    
+}
+
+
+a {
+    color: #f96332;
+}
+
+
+.m-t-5 {
+    margin-top: 5px;   
+}
+
+.card {
+    background: #fff;
+    margin-bottom: 30px;
+    transition: .5s;
+    border: 0;
+    border-radius: .1875rem;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+}
+
+.card .body {
+    font-size: 14px;
+    color: #424242;
+    padding: 20px;
+    font-weight: 400;
+}
+
+.profile-page .profile-header {
+    position: relative;
+}
+
+.profile-page .profile-header .profile-image img {
+    border-radius: 50%;
+    width: 140px;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.profile-page .profile-header .social-icon a {
+    margin: 0 5px;
+}
+
+.profile-page .profile-sub-header {
+    min-height: 60px;
+    width: 100%;
+}
+
+.profile-page .profile-sub-header ul.box-list {
+    display: inline-table;
+    table-layout: fixed;
+    width: 100%;
+    background: #eee;
+}
+
+.profile-page .profile-sub-header ul.box-list li {
+    border-right: 1px solid #e0e0e0;
+    display: table-cell;
+    list-style: none;
+}
+
+.profile-page .profile-sub-header ul.box-list li:last-child {
+    border-right: none;
+}
+
+.profile-page .profile-sub-header ul.box-list li a {
+    display: block;
+    padding: 15px 0;
+    color: #424242;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not([disabled]) {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) { 
+    .profile-page .card {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    .profile-image {
+        margin-bottom: 15px; 
+    }
+
+    .job_post {
+        display: block; 
+        margin: 5px 0; 
+    }
+}
+
